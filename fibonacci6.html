@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+<body>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript">
+
+function* fib(a, b) {
+	let c = 0
+	yield a
+	yield b
+	while (true) {
+		console.log("generando numero nuevo")
+		c = a + b
+		a = b
+		b = c
+		yield c
+		}
+	}
+
+var f = fib(1,1)
+
+/*
+// Output: Object { value: 1, donde: false}
+console.log(f.next())
+// Output: Object { value: 1, donde: false}
+console.log(f.next())
+// Output: Object { value: 2, donde: false}
+console.log(f.next())
+// Output: Object { value: 3, donde: false}
+console.log(f.next())
+// Output: Object { value: 5, donde: false}
+console.log(f.next())
+// Output: Object { value: 8, donde: false}
+console.log(f.next())
+*/
+
+</script>
+</body>
+</html>
